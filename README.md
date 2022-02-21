@@ -18,7 +18,7 @@ Then you can run the app locally from your idea.
     - status endpoint :  http://127.0.0.1:5000/scan/<scan-id> // you get a scan id from the ingest endpoint
 
 
-#Notes 
+# Notes 
 
     - If you decide not to run to docker-compose file and run the prerequisites independently, you will need to install
     the tools mentioned in the requirements.txt file in the project
