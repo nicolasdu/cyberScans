@@ -15,7 +15,7 @@ app = Celery(__name__,
 @app.task()
 def create_task():
     logger.info("Starting the task...")
-    time.sleep(1)
+    time.sleep(10)
     logger.info("Finished processing the task")
     random_result = random.choice([True, False])
     if not random_result:
