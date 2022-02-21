@@ -1,0 +1,17 @@
+services:
+
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  worker:
+    build: .
+    command: celery --app main.tasks worker --loglevel=info --pool=solo
+    container_name: celery_worker
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379
+      - CELERY_RESULT_BACKEND=redis://redis:6379
+    depends_on:
+      - redis
